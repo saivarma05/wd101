@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: yellow;
+      color: white;
+    }
+
+    #registrationForm {
+      width: 300px; /* Set a width for the form */
+      margin-top: 20px;
+      background-color: red; /* Set a red background color for the form */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #dataTable {
+      margin-top: 20px;
+      background-color: green; /* Set a green background color for the table */
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    #dataTable th, #dataTable td {
+      border: 1px solid white;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <p><input type="text" id="name" required style="width: 100%;"></p>
+
+    <label for="email">Email:</label>
+    <p><input type="email" id="email" required style="width: 100%;"></p>
+
+    <label for="password">Password:</label>
+    <p><input type="password" id="password" required style="width: 100%;"></p>
+
+    <label for="dob">Date of Birth:</label>
+    <p><input type="date" id="dob" required style="width: 100%;"></p>
+
+    <label for="terms">I accept the terms:</label>
+    <p><input type="checkbox" id="terms" required></p>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <h2>Registration Data</h2>
+  <table id="dataTable" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Dob</th>
+        <th>Accepted terms?</th>
+      </tr>
+    </thead>
+    <tbody id="dataTableBody">
+      <!-- Table body content will be dynamically populated using JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Include the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
