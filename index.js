@@ -64,3 +64,4 @@ function populateTable(data) {
     });
   });
 }
+
