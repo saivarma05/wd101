@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const savedData = JSON.parse(localStorage.getItem('registrationData')) || [];
+  const savedData = getSavedData();
   populateTable(savedData);
 });
 
@@ -29,13 +29,17 @@ function submitForm() {
     acceptedTerms: document.getElementById('terms').checked,
   };
 
-  const savedData = JSON.parse(localStorage.getItem('registrationData')) || [];
+  const savedData = getSavedData();
   savedData.push(formData);
   localStorage.setItem('registrationData', JSON.stringify(savedData));
 
   populateTable(savedData);
 
   form.reset();
+}
+
+function getSavedData() {
+  return JSON.parse(localStorage.getItem('registrationData')) || [];
 }
 
 function populateTable(data) {
@@ -52,4 +56,5 @@ function populateTable(data) {
     });
   });
 }
+
 
